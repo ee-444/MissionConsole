@@ -1,9 +1,9 @@
-This is the Mission Console debugger.  The project will grow as the semeseter progresses.
+This is the Mission Console debugger.  The project will grow as the semester progresses.
 Each student can use the console if their Arduino projects implement the proper
 data transfer protocol over UART communication channel.  The wiki pages will explain each
 dialog and how to populate it for graphical debugging.
 
-REvISION HISTORY:
+REVISION HISTORY:
 
 -------------------------------------------------------------------------------------------
 
@@ -14,8 +14,8 @@ REvISION HISTORY:
 
 Release Notes:
 	- Only verified with Windows 7 32-bit system.
-	- Functionallity includes analog to digital debugging assistance, long range
-		and short range IR realtime view.
+	- Functionality includes analog to digital debugging assistance, long range
+		and short range IR real-time view.
 
 Known Issues:
 	- None.
