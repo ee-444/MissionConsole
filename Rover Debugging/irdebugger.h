@@ -17,6 +17,7 @@ public:
 // dialog members
 	CFile f;
 	int file_open;
+	int records_to_capture;
 
 // Dialog Data
 	enum { IDD = IDD_IR_DEBUGGER };
@@ -30,5 +31,8 @@ public:
 	afx_msg void OnBnClickedIrCaptureEnd();
 	afx_msg void OnClose();
 	CButton m_running;
+	bool WriteToFile();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	CEdit m_uniquefilename;
+	CEdit m_records_to_capture;
 };

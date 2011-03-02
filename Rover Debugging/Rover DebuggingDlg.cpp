@@ -35,6 +35,8 @@ public:
 // Implementation
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnNMClickLaunchHelp(NMHDR *pNMHDR, LRESULT *pResult);
 };
 
 CAboutDlg::CAboutDlg() : CDialog(CAboutDlg::IDD)
@@ -47,6 +49,7 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
+	ON_NOTIFY(NM_CLICK, IDC_LAUNCH_HELP, &CAboutDlg::OnNMClickLaunchHelp)
 END_MESSAGE_MAP()
 
 
@@ -64,6 +67,10 @@ CRoverDebuggingDlg::CRoverDebuggingDlg(CWnd* pParent /*=NULL*/)
 void CRoverDebuggingDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_IR_REFRESH, m_ir_refresh);
+	DDX_Control(pDX, IDC_IR_METERS, m_ir_meters);
+	DDX_Control(pDX, IDC_LRIR_VALUE, m_lrir_display);
+	DDX_Control(pDX, IDC_MRIR_VALUE, m_mrir_display);
 }
 
 BEGIN_MESSAGE_MAP(CRoverDebuggingDlg, CDialog)
@@ -72,6 +79,7 @@ BEGIN_MESSAGE_MAP(CRoverDebuggingDlg, CDialog)
 	ON_WM_QUERYDRAGICON()
 	//}}AFX_MSG_MAP
 	ON_BN_CLICKED(IDC_IR_DEBUG, &CRoverDebuggingDlg::OnBnClickedIrDebug)
+	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
 
@@ -110,6 +118,7 @@ BOOL CRoverDebuggingDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
+	StartDialogTimers();
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -174,6 +183,160 @@ void CRoverDebuggingDlg::OnBnClickedIrDebug()
 {
 	// TODO: Add your control notification handler code here
 	Cirdebugger dlg;
+	
+	StopDialogTimers();
+	
 	// build the dialog
 	dlg.DoModal();
+
+	StartDialogTimers();
+}
+
+void CRoverDebuggingDlg::StopDialogTimers()
+{
+	KillTimer(PARSE_COM_DATA);
+}
+
+void CRoverDebuggingDlg::StartDialogTimers()
+{
+	SetTimer(PARSE_COM_DATA, PARSE_COM_DATA_TIMEOUT, NULL);
+}
+
+void CRoverDebuggingDlg::OnTimer(UINT_PTR nIDEvent)
+{
+	// TODO: Add your message handler code here and/or call default
+
+	if (nIDEvent == PARSE_COM_DATA){
+		// stop the timer in case of a backlog of data
+		KillTimer(PARSE_COM_DATA);
+		// only parse com data if the port is connected
+		if (_com.IsOpen() == 1){
+			
+			// Update all the dialog windows
+			UpdateComData();
+
+		}
+		SetTimer(PARSE_COM_DATA, PARSE_COM_DATA_TIMEOUT, NULL);
+	}
+
+	CDialog::OnTimer(nIDEvent);
+}
+
+void CRoverDebuggingDlg::UpdateComData()
+{
+	// stored on the stack
+	static char left_over[4096] = {NULL};
+	// stored on the heap
+	char* tmp = (char*)calloc(4096, sizeof(char));
+	char* tmp_base = tmp;
+
+	if (tmp == NULL){
+		// indicate heap failure
+		MessageBeep(0xffffffff);
+		return;
+	}
+
+	if (strlen(left_over) > 0){
+		// copy the leftovers
+		memcpy(tmp, left_over, strlen(left_over));
+		// offset so the read doesnt clobber the data
+		tmp += strlen(left_over);
+		// erase the old left overs
+		memset(left_over, 0, 4096);
+	}
+
+	if (_com.Read(tmp) > 0){
+		// left justify the result
+		int shift_cnt = 1;
+		char* packet = (char*)calloc(128, sizeof(char));
+		char* packet_base = packet;
+
+		if (packet == NULL){
+			// indicate heap failure
+			MessageBeep(0xffffffff);
+			// clear the heap
+			free(tmp_base);
+			return;
+		}
+		
+		// restore tmp to the base address
+		tmp = tmp_base;
+
+		while (*tmp != '<'){
+			// nothing is here
+			if (*tmp == NULL){
+				// clear the heap
+				free(tmp_base);
+				free(packet_base);
+				return;
+			}
+			// shift the contents
+			tmp = (tmp+shift_cnt++);
+		}
+		// process the packets
+		do{
+			// build a single packet
+			while (*tmp != '>'){
+				if (*tmp != '\n'){
+					*packet = *tmp;
+					packet++;
+				}
+
+				tmp++;
+
+				if (*tmp == NULL){
+					// restore the base pointer address
+					packet -= strlen(packet);
+					memcpy(left_over, packet, strlen(packet));
+					// clear the heap
+					free(tmp_base);
+					free(packet_base);
+					return;
+				}
+			}
+
+			tmp++;
+			packet = packet_base;
+
+
+			// parse the known complete packets
+			if (strncmp(packet, "<l.r.i.r. - ", strlen("<l.r.i.r. - ")) == 0){
+				packet += strlen("<l.r.i.r. - ");
+				CString s_disp(packet);
+				if (m_ir_refresh.GetCheck() > 0){
+					m_lrir_display.SetWindowTextW(s_disp);
+				}
+			}
+			else if (strncmp(packet, "<m.r.i.r. - ", strlen("<m.r.i.r. - ")) == 0){
+				packet += strlen("<m.r.i.r. - ");
+				CString s_disp(packet);
+				if (m_ir_refresh.GetCheck() > 0){
+					m_mrir_display.SetWindowTextW(s_disp);
+				}
+			}
+
+			packet = packet_base;
+			memset(packet, 0, 128);
+
+		}while(*tmp != NULL);
+
+		free(packet_base);
+
+	}
+	if (strlen(tmp) > 0){
+		// copy the leftovers
+		memcpy(left_over, tmp, strlen(tmp));
+	}
+	// clear the heap
+	free(tmp_base);
+}
+
+
+void CAboutDlg::OnNMClickLaunchHelp(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO: Add your control notification handler code here
+	PNMLINK pNMLINK = (PNMLINK)pNMHDR;		// create a typecasted object
+	// open the link in the OS default browser
+	::ShellExecute(m_hWnd, _T("open"), pNMLINK->item.szUrl, NULL, NULL, SW_NORMAL);
+	*pResult = 0;	// return result OK
 }

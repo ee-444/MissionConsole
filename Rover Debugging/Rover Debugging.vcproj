@@ -44,6 +44,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				UseUnicodeResponseFiles="true"
 				Optimization="0"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG"
 				MinimalRebuild="true"
@@ -67,6 +68,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\Mission Console.exe"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -194,10 +196,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\golab.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\irdebugger.cpp"
 				>
 			</File>
@@ -244,10 +242,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\golab.h"
-				>
-			</File>
-			<File
 				RelativePath=".\irdebugger.h"
 				>
 			</File>
@@ -277,6 +271,26 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath="..\res\bitmap2.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\res\icon.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\res\icon.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\icon.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\icon1.ico"
+				>
+			</File>
 			<File
 				RelativePath=".\res\Rover Debugging.ico"
 				>

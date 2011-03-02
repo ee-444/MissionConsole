@@ -21,26 +21,44 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_67644BEDF6A24D21A4AA1A5E80C4B13E"
+        "MsmKey" = "8:_1CF99A5AF47943C3A8EB03B59619B6B3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_55D5811E87854B059A5062362D1D1BDD"
         "OwnerKey" = "8:_067465625B2A40CEA20293D99B61CEB3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B7370499C52A405580EF8C7C21689239"
-        "OwnerKey" = "8:_67644BEDF6A24D21A4AA1A5E80C4B13E"
+        "MsmKey" = "8:_8AE52F7251794685B74B5449B330DEDB"
+        "OwnerKey" = "8:_D0DE9CF68C764CB4A01D3EB85382EE4E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C1CB9BBC9DC04CFEA3C0B93BC7B15F82"
+        "MsmKey" = "8:_D0DE9CF68C764CB4A01D3EB85382EE4E"
         "OwnerKey" = "8:_067465625B2A40CEA20293D99B61CEB3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_E98F75551964451FA9FA9FA1909E56AD"
-        "OwnerKey" = "8:_C1CB9BBC9DC04CFEA3C0B93BC7B15F82"
+        "MsmKey" = "8:_D86EDE1F3DDC4E3E9500090EC4232E40"
+        "OwnerKey" = "8:_55D5811E87854B059A5062362D1D1BDD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E2C341F7DA1E49CCA42C810D8BC13FBA"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -105,6 +123,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5.SP1"
+                    {
+                    "Name" = "8:.NET Framework 3.5 SP1"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5.SP1"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
     }
@@ -127,6 +158,66 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1CF99A5AF47943C3A8EB03B59619B6B3"
+            {
+            "SourcePath" = "8:..\\res\\icon.ico"
+            "TargetName" = "8:icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_E47B20F2583C4D749171ADD2FB8086F7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_32B81C0EC6874ABBA98BE511E8C68952"
+            {
+            "SourcePath" = "8:..\\res\\Install banner.jpg"
+            "TargetName" = "8:Install banner.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_E47B20F2583C4D749171ADD2FB8086F7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E2C341F7DA1E49CCA42C810D8BC13FBA"
+            {
+            "SourcePath" = "8:..\\res\\icon.bmp"
+            "TargetName" = "8:icon.bmp"
+            "Tag" = "8:"
+            "Folder" = "8:_E47B20F2583C4D749171ADD2FB8086F7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -154,6 +245,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_E47B20F2583C4D749171ADD2FB8086F7"
+                    {
+                    "Name" = "8:res"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_AB4FE2764C9F4F51A55443B19B38FB41"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_91AE4D60763E43918CE66EB61E2AA03D"
@@ -165,6 +267,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_4C16734C682143F39C6B16B54F5F75C4"
+                    {
+                    "Name" = "8:EE444"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_50D8125638B8493C9FD55859E9021EFE"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -182,21 +295,21 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Installer"
-        "ProductCode" = "8:{5CF0907D-B5ED-4053-8B26-FC264B32FCEE}"
-        "PackageCode" = "8:{6758A85D-32CB-41F0-8077-F7C98BE69DFB}"
+        "ProductName" = "8:Mission Console"
+        "ProductCode" = "8:{91F2A4A9-2E14-410E-A51C-898B74493C5F}"
+        "PackageCode" = "8:{28F8EC6A-57C6-485E-A1C0-2776E4774B1E}"
         "UpgradeCode" = "8:{45DE612F-D1FA-4349-876E-6A9CA11F47F0}"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:EE444"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
+        "ARPHELPLINK" = "8:https://github.com/ee-444/MissionConsole"
         "Title" = "8:Installer"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:CSULB"
+        "ARPCONTACT" = "8:sg-"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Mission Console for EE444"
         "ARPURLINFOABOUT" = "8:"
@@ -317,6 +430,20 @@
             "Icon" = "8:"
             "Feature" = "8:"
             }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_63B7150465F143DD94DEF3822DFD817A"
+            {
+            "Name" = "8:Mission Console"
+            "Arguments" = "8:"
+            "Description" = "8:Launch the EE444 Mission Console"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_067465625B2A40CEA20293D99B61CEB3"
+            "Folder" = "8:_4C16734C682143F39C6B16B54F5F75C4"
+            "WorkingFolder" = "8:_81E0E70D120341F1BB2EF1043A964E6E"
+            "Icon" = "8:_1CF99A5AF47943C3A8EB03B59619B6B3"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -344,7 +471,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -400,7 +528,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "UpdateText"
@@ -444,7 +573,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -466,7 +596,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -514,7 +645,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "InstallAllUsersVisible"
@@ -558,7 +690,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -602,7 +735,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -624,7 +758,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -646,7 +781,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -703,7 +839,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_32B81C0EC6874ABBA98BE511E8C68952"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -713,7 +850,7 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_67644BEDF6A24D21A4AA1A5E80C4B13E"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_55D5811E87854B059A5062362D1D1BDD"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
@@ -727,11 +864,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_B7370499C52A405580EF8C7C21689239"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_8AE52F7251794685B74B5449B330DEDB"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:microsoft_vc90_debugmfc_x86.msm"
+            "SourcePath" = "8:microsoft_vc90_debugcrt_x86.msm"
                 "Properties"
                 {
                 }
@@ -741,7 +878,7 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_C1CB9BBC9DC04CFEA3C0B93BC7B15F82"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_D0DE9CF68C764CB4A01D3EB85382EE4E"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
@@ -755,11 +892,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_E98F75551964451FA9FA9FA1909E56AD"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_D86EDE1F3DDC4E3E9500090EC4232E40"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:TRUE"
-            "SourcePath" = "8:microsoft_vc90_debugcrt_x86.msm"
+            "SourcePath" = "8:microsoft_vc90_debugmfc_x86.msm"
                 "Properties"
                 {
                 }
@@ -774,7 +911,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_067465625B2A40CEA20293D99B61CEB3"
             {
-            "SourcePath" = "8:..\\Debug\\Rover Debugging.exe"
+            "SourcePath" = "8:..\\Debug\\Mission Console.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_81E0E70D120341F1BB2EF1043A964E6E"

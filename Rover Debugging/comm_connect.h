@@ -25,6 +25,7 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
+	void CloseDialog();
 	CComboBox m_com_port_num;
 	afx_msg void OnBnClickedComConnect();
 	afx_msg void OnBnClickedComDisconnect();

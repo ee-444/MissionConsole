@@ -76,6 +76,11 @@ BOOL CRoverDebuggingApp::InitInstance()
 		//  dismissed with Cancel
 	}
 
+	// close the COM port if it is open
+	if (_com.IsOpen() == 1){
+		_com.Close();
+	}
+
 	// Since the dialog has been closed, return FALSE so that we exit the
 	//  application, rather than start the application's message pump.
 	return FALSE;

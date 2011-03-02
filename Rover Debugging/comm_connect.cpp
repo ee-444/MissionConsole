@@ -29,15 +29,20 @@ void Ccomm_connect::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_COM_NUM, m_com_port_num);
 
 
-	char s[24] = {""};
-	int write_loc = 0;
-	// populate the available ports
-	for(int cnt = 0; cnt<=255; cnt++){
-		if (_com.IsAvailable(cnt+1) == 1){
-			_itoa_s((cnt+1), s, 10);
-			CString ss(s);
-			m_com_port_num.InsertString(write_loc++, ss);
+	if (_com.IsOpen() != true){
+		char s[24] = {""};
+		int write_loc = 0;
+		// populate the available system ports
+		for(int cnt = 0; cnt<=255; cnt++){
+			if (_com.IsAvailable(cnt+1) == 1){
+				_itoa_s((cnt+1), s, 10);
+				CString ss(s);
+				m_com_port_num.InsertString(write_loc++, ss);
+			}
 		}
+	}
+	else {
+		m_com_port_num.SetWindowTextW(L"In Use!");
 	}
 }
 
@@ -56,12 +61,36 @@ void Ccomm_connect::OnBnClickedComConnect()
 	wchar_t s[24] = {L""};
 	m_com_port_num.GetWindowTextW(s, 10);
 	int num = _wtoi(s);
-	if (_com.Open(num) == -1){
+	// if the port is open - dont reopen it
+	if (_com.IsOpen() == 1){
+		MessageBox(L"COM port already open.", NULL, NULL);
+		return;
+	}
+	// if it isnt open try to open it
+	else if (_com.Open(num) == -1){
 		MessageBox(L"Didnt open COM port.", NULL, NULL);
+	}
+	// the open was successful
+	else{
+		MessageBox(L"Connection to COM successful.", NULL, NULL);
+		CloseDialog();
 	}
 }
 
 void Ccomm_connect::OnBnClickedComDisconnect()
 {
 	// TODO: Add your control notification handler code here
+	if (_com.IsOpen() == 1){
+		_com.Close();
+		CloseDialog();
+	}
+}
+
+void Ccomm_connect::CloseDialog()
+{
+	CWnd* pWnd = FindWindow(NULL, L"COM Connect");
+	if(pWnd != NULL){
+		// Send close command to the message box window
+		::PostMessage(pWnd->m_hWnd, WM_CLOSE, 0, 0);
+	}
 }

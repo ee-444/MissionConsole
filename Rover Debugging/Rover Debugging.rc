@@ -70,7 +70,8 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON                    "res\\Rover Debugging.ico"
+IDR_MAINFRAME           ICON                    "B:\\vs_projects\\MissionConsole\\res\\icon.ico"
+IDI_ICON                ICON                    "res\\icon.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -79,41 +80,50 @@ IDR_MAINFRAME           ICON                    "res\\Rover Debugging.ico"
 
 IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "About Rover Debugging"
+CAPTION "About Mission Console"
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
-    LTEXT           "Rover Debugging, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    ICON            IDR_MAINFRAME,IDC_STATIC,13,19,21,20
+    LTEXT           "Mission Console, Version 0.1",IDC_STATIC,42,14,114,8,SS_NOPREFIX
     LTEXT           "Copyright (C) 2011",IDC_STATIC,42,26,114,8
     DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
+    CONTROL         "<a href=""https://docs.google.com/document/d/1BPM8DWTZqkMRy7DPYaiJOv0lKSWALgAcaWXADufRYe8/edit?hl=en#"">Launch Help</a>",IDC_LAUNCH_HELP,
+                    "SysLink",WS_TABSTOP,42,38,60,14
 END
 
-IDD_ROVERDEBUGGING_DIALOG DIALOGEX 0, 0, 320, 200
+IDD_ROVERDEBUGGING_DIALOG DIALOGEX 0, 0, 320, 197
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
-CAPTION "Rover Debugging"
+CAPTION "Mission Console"
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,209,179,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,263,179,50,14
-    CTEXT           "TODO: Place dialog controls here.",IDC_STATIC,10,96,300,8
-    EDITTEXT        IDC_IR_VALUE,189,29,40,14,ES_AUTOHSCROLL
-    PUSHBUTTON      "Debug",IDC_IR_DEBUG,242,30,50,14
-    GROUPBOX        "IR tools",IDC_STATIC,176,14,129,77
+    PUSHBUTTON      "Analysis Tool",IDC_IR_DEBUG,245,86,50,14
+    EDITTEXT        IDC_LRIR_VALUE,187,49,40,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "IR tools",IDC_STATIC,173,7,137,104,WS_GROUP
+    DEFPUSHBUTTON   "OK",IDOK,209,176,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Cancel",IDCANCEL,276,176,50,14,NOT WS_VISIBLE
+    LTEXT           "Long Range Sample",IDC_STATIC,233,51,64,8
+    EDITTEXT        IDC_MRIR_VALUE,187,67,40,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Medium Range Sample",IDC_STATIC,233,69,72,8
+    CONTROL         "Enable Refreshing",IDC_IR_REFRESH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,180,20,74,10
+    CONTROL         "Meters / Feet",IDC_IR_METERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,180,33,62,10
 END
 
-IDD_IR_DEBUGGER DIALOGEX 0, 0, 316, 183
+IDD_IR_DEBUGGER DIALOGEX 0, 0, 332, 99
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "IR Debugger"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,205,162,50,14,NOT WS_VISIBLE
-    PUSHBUTTON      "Cancel",IDCANCEL,259,162,50,14,NOT WS_VISIBLE
-    EDITTEXT        IDC_RECORD_COUNT,7,22,40,14,ES_AUTOHSCROLL
-    LTEXT           "Record count",IDC_STATIC,54,26,44,8
-    PUSHBUTTON      "Start Capture",IDC_IR_CAPTURE_START,7,45,50,14
-    PUSHBUTTON      "Stop Capture",IDC_IR_CAPTURE_END,67,46,50,14
-    CONTROL         "Running",IDC_IR_CAPTURE_RUNNING,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,7,66,42,10
+    PUSHBUTTON      "Stop Capture",IDC_IR_CAPTURE_END,80,69,50,14
+    PUSHBUTTON      "Start Capture",IDC_IR_CAPTURE_START,20,68,50,14
+    EDITTEXT        IDC_RECORD_COUNT,15,48,63,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_UNIQUE_FILE_ID,15,31,63,14,ES_AUTOHSCROLL
+    LTEXT           "Results captured",IDC_STATIC,83,51,55,8
+    LTEXT           "Unique file identifier",IDC_STATIC,83,34,63,8
+    CONTROL         "Capture Running",IDC_IR_CAPTURE_RUNNING,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_DISABLED | WS_TABSTOP,72,16,70,10
+    GROUPBOX        "File Manager",IDC_STATIC,7,7,144,85
+    GROUPBOX        "About this dialog",IDC_STATIC,159,7,166,85
+    LTEXT           "The IR Debugger will create a .csv file of sequentially transmitted analog to digital conversions.\n\nThe file is created on the users desktop and the file name can have an identifier attached to it.  Otherwise a file with the same name will be overwritten.",IDC_STATIC,167,19,147,66
 END
 
 IDD_COM_CONNECT DIALOGEX 0, 0, 156, 72
@@ -152,13 +162,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "TODO: <Company name>"
-            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "CompanyName", "None"
+            VALUE "FileDescription", "EE444: Mission Console for debugging the mission"
             VALUE "FileVersion", "1.0.0.1"
             VALUE "InternalName", "Rover Debugging.exe"
-            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "LegalCopyright", "(c) <Company name>.  All rights reserved."
             VALUE "OriginalFilename", "Rover Debugging.exe"
-            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductName", "Mission Console"
             VALUE "ProductVersion", "1.0.0.1"
         END
     END
@@ -188,17 +198,16 @@ BEGIN
     IDD_ROVERDEBUGGING_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 10
-        RIGHTMARGIN, 313
         TOPMARGIN, 7
-        BOTTOMMARGIN, 193
+        BOTTOMMARGIN, 190
     END
 
     IDD_IR_DEBUGGER, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 309
+        RIGHTMARGIN, 325
         TOPMARGIN, 7
-        BOTTOMMARGIN, 176
+        BOTTOMMARGIN, 92
     END
 
     IDD_COM_CONNECT, DIALOG
@@ -214,12 +223,19 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "B:\\vs_projects\\MissionConsole\\res\\icon.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
 // String Table
 //
 
 STRINGTABLE 
 BEGIN
-    IDS_ABOUTBOX            "&About Rover Debugging..."
+    IDS_ABOUTBOX            "&About Mission Console..."
 END
 
 #endif    // English (U.S.) resources
