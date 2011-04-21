@@ -6,6 +6,20 @@ dialog and how to populate it for graphical debugging.
 REVISION HISTORY:
 
 -------------------------------------------------------------------------------------------
+	04-21-11 - Release 2
+			No new features however useability on systems with UAC has been
+			fixed
+
+Release Notes:
+	- Fixed file creation error when running on a UAC enabled system
+	- Updated .exe to be forced to run as Administratior or dont run at all
+	   all features will work and unintended errors will not occur
+
+Known Issues:
+	- When using the installer - it must be exectued under "Run as Administrator" if 
+	   UAC is enabled.
+
+-------------------------------------------------------------------------------------------
 
 	02-28-11 - Release 1
 			Progress report 1 marks the initial public release of this 

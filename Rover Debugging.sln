@@ -1,22 +1,27 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rover Debugging", "Rover Debugging\Rover Debugging.vcproj", "{43DBE50E-3475-43CF-B074-79109B217CB6}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{9D5BFD8D-C7F6-482D-99BB-4207C0AC7340}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mission Console", "Rover Dubugging\Rover Debugging.vcxproj", "{43DBE50E-3475-43CF-B074-79109B217CB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D5BFD8D-C7F6-482D-99BB-4207C0AC7340}.Debug|Win32.ActiveCfg = Debug
+		{9D5BFD8D-C7F6-482D-99BB-4207C0AC7340}.Release|Win32.ActiveCfg = Release
+		{9D5BFD8D-C7F6-482D-99BB-4207C0AC7340}.Template|Win32.ActiveCfg = Release
+		{9D5BFD8D-C7F6-482D-99BB-4207C0AC7340}.Template|Win32.Build.0 = Release
 		{43DBE50E-3475-43CF-B074-79109B217CB6}.Debug|Win32.ActiveCfg = Debug|Win32
 		{43DBE50E-3475-43CF-B074-79109B217CB6}.Debug|Win32.Build.0 = Debug|Win32
 		{43DBE50E-3475-43CF-B074-79109B217CB6}.Release|Win32.ActiveCfg = Release|Win32
 		{43DBE50E-3475-43CF-B074-79109B217CB6}.Release|Win32.Build.0 = Release|Win32
-		{9D5BFD8D-C7F6-482D-99BB-4207C0AC7340}.Debug|Win32.ActiveCfg = Debug
-		{9D5BFD8D-C7F6-482D-99BB-4207C0AC7340}.Release|Win32.ActiveCfg = Release
+		{43DBE50E-3475-43CF-B074-79109B217CB6}.Template|Win32.ActiveCfg = Template|Win32
+		{43DBE50E-3475-43CF-B074-79109B217CB6}.Template|Win32.Build.0 = Template|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

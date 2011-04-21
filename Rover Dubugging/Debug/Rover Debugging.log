@@ -1,0 +1,58 @@
+﻿Build started 4/21/2011 2:31:53 PM.
+     1>Project "B:\vs_projects\Mission Console\Rover Dubugging\Rover Debugging.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\Mission Console.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "Debug\Mission Console.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\Mission Console.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "com port.cpp" comm_connect.cpp irdebugger.cpp "Rover Debugging.cpp" "Rover DebuggingDlg.cpp"
+         Rover DebuggingDlg.cpp
+         Rover Debugging.cpp
+         irdebugger.cpp
+     1>b:\vs_projects\mission console\rover dubugging\irdebugger.cpp(157): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
+     1>b:\vs_projects\mission console\rover dubugging\irdebugger.cpp(174): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
+     1>b:\vs_projects\mission console\rover dubugging\irdebugger.cpp(184): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\stdlib.h(867) : see declaration of 'itoa'
+         comm_connect.cpp
+     1>b:\vs_projects\mission console\rover dubugging\comm_connect.cpp(32): warning C4805: '!=' : unsafe mix of type 'int' and type 'bool' in operation
+         com port.cpp
+         Generating Code...
+       ResourceCompile:
+         c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0409" /IDebug\ /nologo /fo"Debug\Rover Debugging.res" "Rover Debugging.rc" 
+       ManifestResourceCompile:
+         c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Mission Console.exe.embed.manifest.res" "Debug\Mission Console_manifest.rc" 
+       Link:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"B:\vs_projects\Mission Console\Debug\Mission Console.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\Mission Console.exe.intermediate.manifest" /MANIFESTUAC:"level='requireAdministrator' uiAccess='false'" /DEBUG /PDB:"B:\vs_projects\Mission Console\Debug\Mission Console.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"B:\vs_projects\Mission Console\Debug\Mission Console.lib" /MACHINE:X86 "Debug\Rover Debugging.res"
+         "Debug\Mission Console.exe.embed.manifest.res"
+         "Debug\com port.obj"
+         Debug\comm_connect.obj
+         Debug\irdebugger.obj
+         "Debug\Rover Debugging.obj"
+         "Debug\Rover DebuggingDlg.obj"
+         Debug\stdafx.obj
+       Manifest:
+         Deleting file "Debug\Mission Console.exe.embed.manifest".
+         c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Mission Console.exe.embed.manifest" /manifest "Debug\Mission Console.exe.intermediate.manifest" "c:\Program Files\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Mission Console.exe.embed.manifest.res" "Debug\Mission Console_manifest.rc" 
+       LinkEmbedManifest:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"B:\vs_projects\Mission Console\Debug\Mission Console.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\Mission Console.exe.intermediate.manifest" /MANIFESTUAC:"level='requireAdministrator' uiAccess='false'" /DEBUG /PDB:"B:\vs_projects\Mission Console\Debug\Mission Console.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"B:\vs_projects\Mission Console\Debug\Mission Console.lib" /MACHINE:X86 "Debug\Rover Debugging.res"
+         "Debug\Mission Console.exe.embed.manifest.res"
+         "Debug\com port.obj"
+         Debug\comm_connect.obj
+         Debug\irdebugger.obj
+         "Debug\Rover Debugging.obj"
+         "Debug\Rover DebuggingDlg.obj"
+         Debug\stdafx.obj
+         Rover Debugging.vcxproj -> B:\vs_projects\Mission Console\Debug\Mission Console.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\Mission Console.unsuccessfulbuild".
+         Touching "Debug\Mission Console.lastbuildstate".
+     1>Done Building Project "B:\vs_projects\Mission Console\Rover Dubugging\Rover Debugging.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:17.58

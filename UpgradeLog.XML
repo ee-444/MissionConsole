@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Rover Debugging">
+</Property><Property Name="Solution File" Value="B:\vs_projects\MissionConsole\Rover Debugging.sln">
+</Property><Property Name="User Options File" Value="B:\vs_projects\MissionConsole\Rover Debugging.suo">
+</Property><Property Name="Date" Value="Wednesday, April 20, 2011">
+</Property><Property Name="Time" Value="19:49 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Rover Debugging.sln" Description="File successfully backed up as B:\vs_projects\MissionConsole\Rover Debugging.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="Rover Debugging.suo" Description="File successfully backed up as B:\vs_projects\MissionConsole\Rover Debugging.suo.old">
+</Event><Event ErrorLevel="0" Project="Rover Debugging" Source="Rover Debugging\Rover Debugging.vcproj" Description="Converting project file 'B:\vs_projects\MissionConsole\Rover Debugging\Rover Debugging.vcproj'.">
+</Event><Event ErrorLevel="1" Project="Rover Debugging" Source="Rover Debugging\Rover Debugging.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="Rover Debugging" Source="Rover Debugging\Rover Debugging.vcproj" Description="MSB8012: $(TargetName) ('Rover Debugging') does not match the Linker's OutputFile property value 'B:\vs_projects\MissionConsole\Debug\Mission Console.exe' ('Mission Console') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetName) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="Rover Debugging" Source="Rover Debugging\Rover Debugging.vcproj" Description="MSB8012: $(TargetPath) ('B:\vs_projects\MissionConsole\Debug\Rover Debugging.exe') does not match the Linker's OutputFile property value 'B:\vs_projects\MissionConsole\Debug\Mission Console.exe' ('B:\vs_projects\MissionConsole\Debug\Mission Console.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="Rover Debugging" Source="Rover Debugging\Rover Debugging.vcproj" Description="Done converting to new project file 'B:\vs_projects\MissionConsole\Rover Debugging\Rover Debugging.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="Rover Debugging" Source="Rover Debugging\Rover Debugging.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Rover Debugging.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Rover Debugging.sln" Description="Converted">
+</Event></UpgradeLog>
